@@ -8,3 +8,5 @@ https://my.visme.co/view/mxk4e0wd-capstone-project
 
 swot
 https://docs.google.com/document/d/18W9vHT_wbWonXg9FN2trORrSV7x21oPFqiiLYHFk0J0/edit?usp=sharing
+
+
