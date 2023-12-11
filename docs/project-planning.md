@@ -9,4 +9,5 @@ https://my.visme.co/view/mxk4e0wd-capstone-project
 swot
 https://docs.google.com/document/d/18W9vHT_wbWonXg9FN2trORrSV7x21oPFqiiLYHFk0J0/edit?usp=sharing
 
-
+Elevator pitch
+"Hi, I'm Antonio Roberts, a passionate software engineering student at Savvy Coders and a full stack development program enthusiast. Simultaneously, I'm pursuing a computer science bachelor's degree at AMU, delving into theoretical concepts and cutting-edge technologies.My background includes valuable military training, bringing discipline and attention to detail to my problem-solving approach. With hands-on experience in developing versatile applications, I showcase my commitment to creating resilient solutions.In a blend of academics, military discipline, and coding expertise, I'm currently working on a capstone project—an application focused on intermittent fasting. This project not only demonstrates my technical skills but also reflects my interest in using technology to address real-world challenges. I'm excited about contributing innovative solutions in the dynamic field of software engineering."
