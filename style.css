@@ -16,16 +16,16 @@ header {
   text-align: center;
 }
 
-.intermittent-fasting {
+.intermittentfasting {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.intermittent-fasting h2 {
+.intermittentfasting h2 {
   font-size: 2.5em;
 }
 
-.intermittent-fasting p {
+.intermittentfasting p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -53,7 +53,7 @@ button {
 
 
 
-.intermittent-fasting {
+.intermittentfasting {
   background-image: url('https://www.shutterstock.com/image-vector/intermittent-fasting-benefits-personal-diet-600nw-2138311667.jpg');
   background-size: cover;
   background-position: center;
