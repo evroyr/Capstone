@@ -1,7 +1,6 @@
 import html from "html-literal";
-import "../../style.css";
 
-export default () => html`
+export default state => html`
   <section>
     <h2>Welcome to my Website!</h2>
     <p>
