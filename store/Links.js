@@ -1,6 +1,6 @@
 export default [
-  { title: "About", text: "About" },
   { title: "Home", text: "Home" },
+  { title: "About", text: "About" },
   { title: "Fasting", text: "Fasting" },
-  { title: "Workouts", text: "Workouts" }
+  { title: "Workouts", text: "Workouts" },
 ];

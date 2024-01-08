@@ -1,27 +1,42 @@
 import html from "html-literal";
 
 export default () => html`
-  <section class="workouts">
-    <h2>Workout Routines</h2>
-    <p>
-      Discover effective workout routines to complement your intermittent
-      fasting journey.
-    </p>
-
-    <!-- Example Workout Routine -->
-    <div class="workout-routine">
-      <h3>Cardio Blast</h3>
-      <p>
-        This high-intensity cardio workout is perfect for burning calories and
-        improving cardiovascular health.
-      </p>
-      <ul>
-        <li>Jumping Jacks: 3 sets of 1 minute</li>
-        <li>Running in Place: 3 sets of 2 minutes</li>
-        <li>High Knees: 3 sets of 1 minute</li>
-      </ul>
-    </div>
-
-    <!-- Add more workout routines as needed -->
+  <section id="workout">
+    <form id="workout-form" method="POST" action="">
+      <h2>Record Workout Session</h2>
+      <div>
+        <label for="exercise">Exercise:</label>
+        <input
+          type="text"
+          id="exercise"
+          name="exercise"
+          placeholder="Enter the exercise"
+          required
+        />
+      </div>
+      <div>
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" name="duration" required />
+      </div>
+      <div>
+        <label for="intensity">Intensity:</label>
+        <select id="intensity" name="intensity">
+          <option value="">Select Intensity</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div>
+        <label for="notes">Notes:</label>
+        <textarea
+          id="notes"
+          name="notes"
+          placeholder="Enter any notes"
+        ></textarea>
+      </div>
+      <input type="hidden" name="user" id="user" value="Anonymous User" />
+      <input type="submit" name="submit" value="Submit Workout Record" />
+    </form>
   </section>
 `;

@@ -2,96 +2,77 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #f4f4f4;
-  color: #333;
-  display: flex;
-  flex-direction: column;
+  background-color: #f2f2f2; /* Light Gray background */
 }
 
-header {
-  background-color: #db3434;
-  color: #fff;
-  padding: 20px;
+header, nav {
+  background-color: black;
+  color: white;
+  padding: 10px;
   text-align: center;
-}
-
-.intermittentfasting {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.intermittentfasting h2 {
-  font-size: 2.5em;
-}
-
-.intermittentfasting p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  background-color: #4CAF50;
-  color: #100a0a;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #007BFF;
-  color: #0b0101;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-
-.intermittentfasting {
-  background-image: url('https://www.shutterstock.com/image-vector/intermittent-fasting-benefits-personal-diet-600nw-2138311667.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #322828;
-  text-align: center;
-  padding: 90px 30px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #4a4646;
-}
-
-main {
-  padding: 20px;
 }
 
 section {
-  margin-bottom: 30px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ff6666; /* Red background */
+  color: white; /* Set text color to white for better readability */
 }
 
-footer {
-  background-color: #db3434;
-  color: #fff;
-  text-align: center;
+#fasting-form,
+#workout-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  background-color: white; /* Set a white background for forms */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input,
+textarea,
+select {
   padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-@media only screen and (max-width: 600px) {
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border: none; /* Remove border for a cleaner button */
+}
 
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  #fasting-form,
+  #workout-form {
+    width: 90%; /* Adjusted width for better responsiveness */
+  }
+}
+
+/* Additional styles for the home page */
+.home-content {
+  text-align: center;
+  color: #333; /* Set a different text color for the home page */
+  padding: 20px;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
 }
