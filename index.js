@@ -18,50 +18,47 @@ function render(state = store.Home) {
 
 router.hooks({
   before: (done, params) => {
-    // We need to know what view we are on to know what data to fetch
     const view =
       params && params.data && params.data.view
         ? capitalize(params.data.view)
         : "Home";
-    // Add a switch case statement to handle multiple routes
+
     switch (view) {
-      // New Case for the Home View
       case "Home":
         axios
-          // Get request to retrieve the current weather data using the API key and providing a city name
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.CAPSTONE_API}&q=orlando`
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=orlando`,
           )
-          .then(response => {
-            // Convert Kelvin to Fahrenheit since OpenWeatherMap does not provide it directly
-            const kelvinToFahrenheit = kelvinTemp =>
+          .then((response) => {
+            const kelvinToFahrenheit = (kelvinTemp) =>
               Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-            // Create an object to be stored in the Home state from the response
             store.Home.weather = {
               city: response.data.name,
               temp: kelvinToFahrenheit(response.data.main.temp),
               feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
-              description: response.data.weather[0].main
+              description: response.data.weather[0].main,
             };
 
-            // Call render after the axios request is complete
             render(store[view]);
+            done();
           })
-          .catch(error => {
-            // Handle errors
+          .catch((error) => {
             console.error("Error fetching data:", error);
             done();
           });
-        break; // Don't forget to add a break statement here
+        break;
+      // Add more cases for other views if needed
+      default:
+        done();
     }
-  }
+  },
 });
 
 router
   .on({
     "/": () => render(),
-    ":view": params => {
+    ":view": (params) => {
       let view = capitalize(params.view);
       if (view in store) {
         render(store[view]);
@@ -69,6 +66,15 @@ router
         render(store.Viewnotfound);
         console.log(`View ${view} not defined`);
       }
-    }
+    },
   })
   .resolve();
+
+// Add your form event listeners outside of the router.hooks block
+document.querySelector("#fasting-form").addEventListener("submit", (event) => {
+  // Your Intermittent Fasting form handling code
+});
+
+document.querySelector("#workout-form").addEventListener("submit", (event) => {
+  // Your Workouts form handling code
+});

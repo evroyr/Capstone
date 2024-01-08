@@ -1,4 +1,5 @@
-export default {
+export const Fasting = {
   header: "Fasting",
-  view: "Fasting"
+  view: "Fasting",
+  fastingRecords: [],
 };
