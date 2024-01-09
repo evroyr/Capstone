@@ -1,4 +1,4 @@
 export default {
   header: "Workouts",
-  view: "Workouts"
+  view: "Workouts",
 };

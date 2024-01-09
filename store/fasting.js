@@ -1,5 +1,4 @@
-export const Fasting = {
+export default {
   header: "Fasting",
   view: "Fasting",
-  fastingRecords: [],
 };
