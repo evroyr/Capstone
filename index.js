@@ -48,7 +48,7 @@ router.hooks({
             done();
           });
         break;
-      // Add more cases for other views if needed
+
       default:
         done();
     }
@@ -69,12 +69,3 @@ router
     },
   })
   .resolve();
-
-// Add your form event listeners outside of the router.hooks block
-document.querySelector("#fasting-form").addEventListener("submit", (event) => {
-  // Your Intermittent Fasting form handling code
-});
-
-document.querySelector("#workout-form").addEventListener("submit", (event) => {
-  // Your Workouts form handling code
-});
