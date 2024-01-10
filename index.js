@@ -86,7 +86,7 @@ function afterRender(state) {
 }
 
 function renderFastingView() {}
-
+// f
 function renderWorkoutsView() {}
 
 router
