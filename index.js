@@ -14,6 +14,7 @@ function render(state = store.Home) {
     ${Footer()}
   `;
   router.updatePageLinks();
+  afterRender(state);
 }
 
 router.hooks({
@@ -40,26 +41,61 @@ router.hooks({
               description: response.data.weather[0].main,
             };
 
-            render(store[view]);
-            done();
+            done(store.Home);
           })
           .catch((error) => {
             console.error("Error fetching data:", error);
-            done();
+            done(store.Home);
           });
+        break;
+
+      case "Fasting":
+        done();
+        break;
+
+      case "Workouts":
+        done();
         break;
 
       default:
         done();
     }
   },
+  already: (params) => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
+  },
 });
+
+function afterRender(state) {
+  document.querySelector(".fa-bars").addEventListener("click", () => {
+    document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+  });
+
+  if (state.view === "Fasting") {
+    renderFastingView();
+  }
+
+  if (state.view === "Workouts") {
+    renderWorkoutsView();
+  }
+}
+
+function renderFastingView() {}
+
+function renderWorkoutsView() {}
 
 router
   .on({
     "/": () => render(),
+    "/fasting": () => render(store.Fasting),
+    "/workouts": () => render(store.Workouts),
     ":view": (params) => {
-      let view = capitalize(params.view);
+      let view = capitalize(params.data.view);
       if (view in store) {
         render(store[view]);
       } else {
