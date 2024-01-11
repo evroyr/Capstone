@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Fasting from "..Fasting.js";
+import Fasting from "./models/Fasting.js";
 
 const router = Router();
 
