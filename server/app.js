@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://evroyr:Imgayasf16@evroyr.zx7b4pg.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://evroyr:czEDWNkABSyy5yiW@evroyr.zx7b4pg.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
