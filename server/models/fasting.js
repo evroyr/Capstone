@@ -27,3 +27,5 @@ const fastingSchema = new mongoose.Schema({
 const Fasting = mongoose.model("Fasting", fastingSchema);
 
 export default Fasting;
+
+//
