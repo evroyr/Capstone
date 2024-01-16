@@ -1,9 +1,11 @@
 import html from "html-literal";
+import workoutpic from "../../assets/img/workout.jpg";
 
 export default () => html`
   <section id="workout">
     <form id="workout-form" method="POST" action="">
       <h2>Record Workout Session</h2>
+      <img src=${workoutpic} alt="me" />
       <div>
         <label for="exercise">Exercise:</label>
         <input
