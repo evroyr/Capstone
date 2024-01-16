@@ -85,9 +85,39 @@ function afterRender(state) {
   }
 }
 
-function renderFastingView() {}
-// f
-function renderWorkoutsView() {}
+function handleFastingFormSubmit(event) {
+  event.preventDefault();
+  console.log("Fasting form submitted!");
+  const formData = new FormData(event.target);
+  console.log("Form data:", formData);
+}
+
+function handleWorkoutsFormSubmit(event) {
+  event.preventDefault();
+  console.log("Workouts form submitted!");
+  const formData = new FormData(event.target);
+  console.log("Form data:", formData);
+}
+
+function renderFastingView() {
+  const fastingButton = document.querySelector("#fasting-button");
+  fastingButton.addEventListener("click", () => {
+    console.log("Fasting button clicked!");
+  });
+
+  const fastingForm = document.querySelector("#fasting-form");
+  fastingForm.addEventListener("submit", handleFastingFormSubmit);
+}
+
+function renderWorkoutsView() {
+  const workoutsButton = document.querySelector("#workouts-button");
+  workoutsButton.addEventListener("click", () => {
+    console.log("Workouts button clicked!");
+  });
+
+  const workoutsForm = document.querySelector("#workouts-form");
+  workoutsForm.addEventListener("submit", handleWorkoutsFormSubmit);
+}
 
 router
   .on({

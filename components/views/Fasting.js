@@ -1,9 +1,11 @@
 import html from "html-literal";
+import fastingpic from "../../assets/img/fasting.jpg";
 
 export default () => html`
   <section id="fasting">
     <form id="fasting-form" method="POST" action="">
       <h2>Record Intermittent Fasting</h2>
+      <img src=${fastingpic} alt="me" />
       <div>
         <label for="start-time">Start Time:</label>
         <input

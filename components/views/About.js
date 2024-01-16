@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => html`
+export default (state) => html`
   <section>
     <h2>Our Story</h2>
     <p>
@@ -9,7 +9,6 @@ export default state => html`
     </p>
   </section>
 
-  // d
   <section>
     <h2>Our Vision</h2>
     <p>
