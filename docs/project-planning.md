@@ -11,3 +11,41 @@ https://docs.google.com/document/d/18W9vHT_wbWonXg9FN2trORrSV7x21oPFqiiLYHFk0J0/
 
 Elevator pitch
 "Hi, I'm Antonio Roberts, a passionate software engineering student at Savvy Coders and a full stack development program enthusiast. Simultaneously, I'm pursuing a computer science bachelor's degree at AMU, delving into theoretical concepts and cutting-edge technologies.My background includes valuable military training, bringing discipline and attention to detail to my problem-solving approach. With hands-on experience in developing versatile applications, I showcase my commitment to creating resilient solutions.In a blend of academics, military discipline, and coding expertise, I'm currently working on a capstone project—an application focused on intermittent fasting. This project not only demonstrates my technical skills but also reflects my interest in using technology to address real-world challenges. I'm excited about contributing innovative solutions in the dynamic field of software engineering."
+
+
+
+
+
+//function handleFastingFormSubmit(event) {
+  event.preventDefault();
+  console.log("Fasting form submitted!");
+  const formData = new FormData(event.target);
+  console.log("Form data:", formData);
+}
+
+function handleWorkoutsFormSubmit(event) {
+  event.preventDefault();
+  console.log("Workouts form submitted!");
+  const formData = new FormData(event.target);
+  console.log("Form data:", formData);
+}
+
+function renderFastingView() {
+  const fastingButton = document.querySelector("#fasting-button");
+  fastingButton.addEventListener("click", () => {
+    console.log("Fasting button clicked!");
+  });
+
+  const fastingForm = document.querySelector("#fasting-form");
+  fastingForm.addEventListener("submit", handleFastingFormSubmit);
+}
+
+function renderWorkoutsView() {
+  const workoutsButton = document.querySelector("#workouts-button");
+  workoutsButton.addEventListener("click", () => {
+    console.log("Workouts button clicked!");
+  });
+
+  const workoutsForm = document.querySelector("#workouts-form");
+  workoutsForm.addEventListener("submit", handleWorkoutsFormSubmit);
+}
