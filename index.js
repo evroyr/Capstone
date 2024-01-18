@@ -88,7 +88,7 @@ function afterRender(state) {
 
       // Create a request body object for fasting form inside the event handler
       const fastingRequestData = {
-        user: "Antonio",
+        user: "Anonymous User",
         startDateTime: inputList["start-time"].value,
         endDateTime: inputList["end-time"].value,
         duration: inputList.duration.value,
@@ -99,7 +99,7 @@ function afterRender(state) {
 
       axios
         // Make a POST To track your fasting
-        .post(`${process.env.CAPSTONE_API}/Fasting`, fastingRequestData)
+        .post(`${process.env.RENDER}/Fasting`, fastingRequestData)
         .then((response) => {
           // Then push the new data onto the state attribute
           store.Fasting.Fasting.push(response.data);
@@ -134,7 +134,7 @@ function afterRender(state) {
 
       axios
         // Make a POST To track your workout
-        .post(`${process.env.CAPSTONE_API}/Workouts`, workoutsRequestData)
+        .post(`${process.env.RENDER}/Workouts`, workoutsRequestData)
         .then((response) => {
           // Then push the new data onto the state attribute
           store.Workouts.Workouts.push(response.data);
@@ -147,6 +147,7 @@ function afterRender(state) {
     });
   }
 }
+
 router
   .on({
     "/": () => render(),

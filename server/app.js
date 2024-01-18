@@ -8,13 +8,10 @@ dotenv.config();
 
 const app = express();
 
-mongoose.connect(
-  "mongodb+srv://evroyr:czEDWNkABSyy5yiW@evroyr.zx7b4pg.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-);
+mongoose.connect(process.env.MONGODB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 
@@ -87,6 +84,6 @@ app.get("/weather/:city", (request, response) => {
   });
 });
 
-app.use("/fasting", Fasting); // Update the router path to match your fasting route
+app.use("/Fasting", Fasting);
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port 4040`));
