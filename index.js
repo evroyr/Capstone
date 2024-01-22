@@ -89,58 +89,63 @@ function afterRender(state) {
       // Create a request body object for fasting form inside the event handler
       const fastingRequestData = {
         user: "Anonymous User",
-        startDateTime: inputList["start-time"].value,
-        endDateTime: inputList["end-time"].value,
-        duration: inputList.duration.value,
+        startTime: new Date(inputList["start-time"].value),
+        endTime: new Date(inputList["end-time"].value),
+        duration: parseInt(inputList.duration.value),
         notes: inputList.notes.value,
       };
 
       console.log("Fasting Request Body", fastingRequestData);
 
       axios
-        // Make a POST To track your fasting
         .post(`${process.env.RENDER}/Fasting`, fastingRequestData)
         .then((response) => {
+          console.log("Successful POST response:", response.data);
+
+          // Assuming response.data is an object, you might want to check its structure
+          console.log("Response data structure:", response.data);
+
           // Then push the new data onto the state attribute
-          store.Fasting.Fasting.push(response.data);
+          store.Fasting.fasting.push(response.data);
           router.navigate("/Fasting");
         })
-        // If there is an error log it to the console
         .catch((error) => {
-          console.log("It puked", error);
+          console.error("Error during POST:", error);
         });
     });
   }
 
   if (state.view === "Workouts") {
-    const workoutsForm = document.querySelector("#workouts-form");
-    workoutsForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      console.log("Workouts form submitted!");
+    document.addEventListener("DOMContentLoaded", function () {
+      const workoutTypeDropdown = document.getElementById("workout-type");
+      const repsInput = document.getElementById("reps");
+      const startWorkoutButton = document.getElementById("start-workout");
+      const resultContainer = document.getElementById("workout-result");
 
-      // Get the form element and create inputList inside the event handler
-      const inputList = event.target.elements;
-      console.log("Input Element List", inputList);
+      startWorkoutButton.addEventListener("click", function () {
+        const workoutType = workoutTypeDropdown.value;
+        const reps = repsInput.value;
 
+        const workoutResult = `You selected ${workoutType} workout and should do ${reps} reps.`;
+
+        resultContainer.textContent = workoutResult;
+      });
+
+      // Define and populate workoutsRequestData here with the relevant data.
       const workoutsRequestData = {
-        user: "Anonymous User",
-        exercise: inputList.exercise.value,
-        duration: inputList.duration.value,
-        intensity: inputList.intensity.value,
-        notes: inputList.notes.value,
-        // Add other relevant properties for your workout data
+        workoutType: workoutType,
+        reps: reps,
+        // Add other relevant data properties.
       };
+
       console.log("Workouts Request Body", workoutsRequestData);
 
       axios
-        // Make a POST To track your workout
         .post(`${process.env.RENDER}/Workouts`, workoutsRequestData)
         .then((response) => {
-          // Then push the new data onto the state attribute
           store.Workouts.Workouts.push(response.data);
           router.navigate("/Workouts");
         })
-        // If there is an error log it to the console
         .catch((error) => {
           console.log("It puked", error);
         });
