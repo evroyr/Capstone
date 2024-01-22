@@ -2,43 +2,35 @@ import html from "html-literal";
 import workoutpic from "../../assets/img/workout.jpg";
 
 export default () => html`
-  <section id="workout">
-    <form id="workout-form" method="POST" action="">
-      <h2>Record Workout Session</h2>
-      <img src=${workoutpic} alt="me" />
-      <div>
-        <label for="exercise">Exercise:</label>
-        <input
-          type="text"
-          id="exercise"
-          name="exercise"
-          placeholder="Enter the exercise"
-          required
-        />
-      </div>
-      <div>
-        <label for="duration">Duration (minutes):</label>
-        <input type="number" id="duration" name="duration" required />
-      </div>
-      <div>
-        <label for="intensity">Intensity:</label>
-        <select id="intensity" name="intensity">
-          <option value="">Select Intensity</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <title>Workouts Page</title>
+    </head>
+    <body>
+      <h1>Workouts Page</h1>
+
+      <div id="workouts-form">
+        <img src=${workoutpic} alt="me" />
+        <label for="workout-type">Select Workout Type:</label>
+        <select id="workout-type" name="workout-type">
+          <option value="cardio">Cardio</option>
+          <option value="strength">Strength Training</option>
+          <!-- Add more workout types as needed -->
         </select>
+
+        <label for="reps">Number of Reps:</label>
+        <input type="number" id="reps" name="reps" min="1" required />
+
+        <button id="start-workout">Start Workout</button>
       </div>
-      <div>
-        <label for="notes">Notes:</label>
-        <textarea
-          id="notes"
-          name="notes"
-          placeholder="Enter any notes"
-        ></textarea>
-      </div>
-      <input type="hidden" name="user" id="user" value="Anonymous User" />
-      <input type="submit" name="submit" value="Submit Workout Record" />
-    </form>
-  </section>
+
+      <div id="workout-result"></div>
+
+      <script src="script.js"></script>
+    </body>
+  </html>
 `;
